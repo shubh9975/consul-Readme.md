@@ -55,6 +55,36 @@ You can configure the following:
 |livenessProbe.enabled|"Enable livenessProbe	"|string|true|
 |livenessProbe.initialDelaySeconds|livenessProbe.initialDelaySeconds|integer|30|
 |livenessProbe.periodSeconds|Period seconds for livenessProbe|integer|10|
+|livenessProbe.timeoutSeconds|Timeout seconds for livenessProbe|integer|5|
+|livenessProbe.failureThreshold|Failure threshold for livenessProbe|integer|6|
+|livenessProbe.successThreshold|Success threshold for livenessProbe|integer|1|
+|readinessProbe.enabled|Enable readinessProbe|string|true|
+|readinessProbe.initialDelaySeconds|Initial delay seconds for readinessProbe|integer|5|
+|readinessProbe.periodSeconds|Period seconds for readinessProbe|integer|10|
+|readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|5|
+|readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|6|
+|readinessProbe.successThreshold|Success threshold for readinessProbe|integer|1|
+|startupProbe.enabled|Enable startupProbe|string|false|
+|startupProbe.initialDelaySeconds|Initial delay seconds for startupProbe|integer|0|
+|startupProbe.periodSeconds|Period seconds for startupProbe|integer|10|
+|startupProbe.timeoutSeconds|Timeout seconds for startupProbe|integer|5|
+|startupProbe.failureThreshold|Failure threshold for startupProbe|integer|60|
+|startupProbe.successThreshold|Success threshold for startupProbe|integer|1|
+|customLivenessProbe|Override default liveness probe|string|{}|
+|customReadinessProbe|Override default readiness probe|string|{}|
+|customStartupProbe|Override default startup probe|string|{}|
+|pdb.create|Enable/disable a Pod Disruption Budget creation|string|false|
+|pdb.minAvailable|"Minimum number of pods that must still be available after the eviction	"|integer|1|
+|pdb.maxUnavailable|Max number of pods that can be unavailable after the eviction|string|""|
+|resources.limits|The resources limits for HashiCorp Consul containers|string|""|
+|resources.requests|The requested resources for HashiCorp Consul containers|string|{}|
+|containerSecurityContext.enabled|HashiCorp Consul Container securityContext|string|true|
+|containerSecurityContext.runAsUser|User ID for the HashiCorp Consul container|integer|1001|
+|containerSecurityContext.runAsNonRoot|Force the container to be run as non root|string|true|
+
+
+### Exposure parameters
+
 
 
 
