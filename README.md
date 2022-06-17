@@ -147,7 +147,19 @@ You can configure the following:
 
 |Parameter|Description|Type|Default|
 |---------|-----------|----|-------|
-
+|metrics.enabled|Start a side-car prometheus exporter|string|false|
+|metrics.image.registry|HashiCorp Consul Prometheus Exporter image registry|string|docker.io|
+|metrics.image.repository|HashiCorp Consul Prometheus Exporter image repository|string|bitnami/consul-exporter|
+|metrics.image.tag|HashiCorp Consul Prometheus Exporter image tag (immutable tags are recommended)|string|0.8.0-debian-10-r99|
+|metrics.image.pullPolicy|HashiCorp Consul Prometheus Exporter image pull policy|string|IfNotPresent|
+|metrics.serviceMonitor.enabled|Create ServiceMonitor Resource for scraping metrics using PrometheusOperator, set to true to create a Service Monitor Entry|string|false|
+|metrics.serviceMonitor.namespace|The namespace in which the ServiceMonitor will be created|string|""|
+|metrics.serviceMonitor.interval|Interval at which metrics should be scraped|integer|30s|
+|metrics.serviceMonitor.scrapeTimeout|The timeout after which the scrape is ended|string|""|
+|metrics.serviceMonitor.honorLabels|Specify honorLabels parameter to add the scrape endpoint|string|false|
+|metrics.serviceMonitor.jobLabel|The name of the label on the target service to use as the job name in prometheus.|string|""|
+|metrics.serviceMonitor.selector|ServiceMonitor selector labels|string|{}|
+|metrics.serviceMonitor.labels|Used to pass Labels that are used by the Prometheus installed in your cluster to select Service Monitors to work with|string|{}|
 
 
 
