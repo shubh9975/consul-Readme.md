@@ -161,5 +161,33 @@ You can configure the following:
 |metrics.serviceMonitor.selector|ServiceMonitor selector labels|string|{}|
 |metrics.serviceMonitor.labels|Used to pass Labels that are used by the Prometheus installed in your cluster to select Service Monitors to work with|string|{}|
 
+###  statefulset Parameter
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|env.BITNAMI_DEBUG|statefulset env BITNAMI_DEBUG|string|false|
+|env.CONSUL_NODE_NAME|statefulset env CONSUL_NODE_NAME|string|metadata.name|
+|env.CONSUL_BOOTSTRAP_EXPECT|statefulset env CONSUL_BOOTSTRAP_EXPECT|integer|3|
+|env.CONSUL_RETRY_JOIN|statefulset env CONSUL_RETRY_JOIN|string|release-name-consul-headless.default.svc.cluster.local|
+|env.CONSUL_DISABLE_KEYRING_FILE|statefulset env CONSUL_DISABLE_KEYRING_FILE|string|true|
+|env.CONSUL_RAFT_MULTIPLIER|statefulset env CONSUL_RAFT_MULTIPLIER|integer|1|
+|env.CONSUL_DOMAIN|statefulset env CONSUL_DOMAIN|string|consul|
+|env.CONSUL_DATACENTER|statefulset env CONSUL_DATACENTER|string|dc1|
+|env.CONSUL_UI|statefulset env CONSUL_UI|string|true|
+|env.CONSUL_HTTP_PORT_NUMBER|statefulset env CONSUL_HTTP_PORT_NUMBER|integer|8500|
+|env.CONSUL_DNS_PORT_NUMBER|statefulset env CONSUL_DNS_PORT_NUMBER|integer|8600|
+|env.CONSUL_RPC_PORT_NUMBER|statefulset env CONSUL_RPC_PORT_NUMBER|integer|8400|
+|env.CONSUL_SERF_LAN_PORT_NUMBER|statefulset env CONSUL_SERF_LAN_PORT_NUMBER"|integer|8301|
 
 
+### Common parameters
+
+|Parameter|Description|Type|Default|
+|---------|-----------|----|-------|
+|imagePullPolicy|imagePullPolicy|string|IfNotPresent|
+|volumeClaimTemplates.storage|Volume storage|integer|8Gi|
+|securityContext.runAsUser|runAsUser|integer|1001|
+|ports.containerPort|containerPort|integer|9107
+|prometheusioport|prometheusioport|integer|9107|
+|prometheusioscrape|prometheusioscrape|string|true|
+|volumeMounts.mountPath| Voulme Mount Path|string|/bitnami/consul|
+|initContainers.enabled|consul enabled initContainers|string|false|
